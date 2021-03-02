@@ -1,0 +1,19 @@
+<h1>Add new blogger</h1>
+
+<% if @errors %>
+    <ul>
+        <% @errors.each do |error|%>
+            <li class="error"> <%= error %> </li>
+        <% end %>
+    </ul>
+<% end %>
+
+<%= form_for @blogger do |form_helper|%>
+    <%= form_helper.label :name %><br>
+    <%= form_helper.text_field :name %><br>
+    <%= form_helper.label :bio %><br>
+    <%= form_helper.text_field :bio %><br>
+    <%= form_helper.label :age %><br>
+    <%= form_helper.number_field :age %><br>
+    <%= form_helper.submit "done!" %>
+<% end %>

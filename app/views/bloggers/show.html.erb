@@ -1,0 +1,22 @@
+<h1> <%= @blogger.name %> </h1>
+<p>Find me in app/views/bloggers/show.html.erb</p>
+
+<p> Total likes: <%= @blogger.total_likes %> </p>
+
+<% unless @destinations_array.empty? %>
+	<h2> Most written about destinations: </h2>
+	<ul>
+		<% @destinations_array.each do |dest| %>
+			<li><%= link_to dest.name, dest %> </li>
+		<% end %>
+	</ul>
+	<h2> Most liked post: </h2>	
+	<p> <%= link_to @post.title, @post%> </p>
+<% end %>
+
+<%
+=begin%>
+	- **BONUS** A list of that user's top 5 most written about destinations (the destinations with the most posts)
+<%
+=end
+%>

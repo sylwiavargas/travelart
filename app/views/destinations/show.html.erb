@@ -1,0 +1,14 @@
+<h1>Destination: <%= @destination.name %></h1>
+
+<% unless @posts.empty? %>
+    <p> Here are the most recent posts: </p>
+        <ul>
+            <% @posts.each do |post| %>
+                <li> <%= link_to post.title, post%> </li>
+            <% end %>
+        </ul>
+    <p> This is the most liked post: <%= link_to @featured.title, @featured%> </p>
+    <p> The average blogger age is: <%= @average_age%> </p>
+<% else %>
+    <p> This destination has not yet been talked about! </p>
+<% end %>

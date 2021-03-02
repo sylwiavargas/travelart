@@ -1,0 +1,11 @@
+<h1><%= @post.title %></h1>
+<h2>By: <%= link_to @author.name, @author %></h2>
+<h2>About: <%= link_to @destination.name, @destination %></h2>
+<hr>
+
+<p><%= @content %></p>
+
+<p> So many people liked it: <%= @likes %> </p>
+<%= button_to "like me", like_path, method: :patch%>
+
+
